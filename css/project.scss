@@ -1,0 +1,117 @@
+@charset 'UTF-8';
+#header{
+    #nav{
+        .navWrap{
+            .navRight{
+                .now{
+                    color: #5292FF;
+                }
+            }
+        }
+        .navRightM{
+            .burger{
+                .now{
+                    background: #fff;
+                }
+            }
+        }
+    }
+}
+#main{
+    margin-top: 150px;
+    padding: 0 80px;
+    .brandText{
+        width: 78%;
+        margin:20px 0 120px;
+        >img{
+            width: 100%;
+        }
+    }
+    .projectBox{
+        width: 100%;
+        .projects{
+            display: flex;
+            flex-wrap: wrap;
+            .item{
+                width: 23%;
+                text-align: left;
+                margin: 1%;
+                .projectImg{
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    overflow: hidden;
+                    border-radius: 2%;
+                    .nail{
+                        width: 100%;
+                        .projectImgItem{
+                            display: block;
+                           object-fit: cover;
+                            width: 100%;
+                            transition: transform .4s;
+                        }
+                    }
+                    &:hover .projectImgItem{
+                        transform: scale(1.1);
+                    }
+                }
+                .productTitle{
+                    font-size: 18px;
+                    margin: 10px;
+                    font-weight: 300;
+                    -webkit-line-clamp:1;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display:-webkit-box;
+                    -webkit-box-orient:vertical;
+                }
+            }
+        }
+    }
+}
+
+//media screen 영역
+@media screen and (max-width:1020px){
+#main{
+    padding: 0 40px;
+    .brandText{
+        width: 90%;
+        margin:20px 0 80px;
+    }
+    .projectBox{
+        .projects{
+            .item{
+                width: 48%;
+                .productTitle{
+                    font-size: 20px;
+                    margin: 15px 20px;
+                }
+            }
+        }
+    }
+}
+}
+@media screen and (max-width:740px){
+    #main{
+        .brandText{
+            width: 100%;
+            margin:20px 0 60px;
+        }
+        .projectBox{
+            .projectList{
+                .project{
+                    .sectionBox{
+                        >ul{
+                            >li{padding: 8px 20px;}
+                            .projectNail{font-size: 18px;}
+                            .bold{font-size: 18px;}
+                        }
+                    }
+                }
+            }
+            .projects{
+                .item{width: 100%;}
+            }
+        }
+    }
+}

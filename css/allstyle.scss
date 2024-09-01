@@ -1,0 +1,190 @@
+@charset 'UTF-8';
+
+@mixin hover {
+    display: block;
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+    transition: .3s ease-in-out;
+    &::before{
+        position: absolute;
+        top: -50%;
+        left: 50%;
+        transform: translateX(-50%);
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        background: url(../img/navPoint.png)no-repeat center center/contain;
+        transition: .3s ease-in-out;
+        opacity: 0;
+    }
+    &:hover{
+        &::before{
+            top:1px;
+            opacity: 1;
+        }
+    }
+}
+.navList{@include hover();}
+body{
+    &.menuActive{overflow: hidden; height: 100%;}
+}
+#header{
+    width: 100%;
+    #nav{
+        position: fixed;
+        top: 0;
+        z-index: 999;
+        width: 100%;
+        height: 80px;
+        border-bottom: 1px solid #000;
+        background-color: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        .navWrap{
+            min-width: 1520px;
+            height: 100%;
+            position: relative;
+            padding: 0 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .logo{
+                >a{
+                    width: 68px;
+                }
+            }
+            .navRight{
+                display: flex;
+                >li{
+                    &:not(:last-child){
+                        padding-right: 50px;
+                    }
+                   >a{
+                    display: block;
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    padding: 10px 8px;
+                    transition: .3s;
+                    &:hover{
+                        color: #5292FF;
+                    }
+                   }
+                }
+            }
+            .bar{display: none;}
+        }
+        .navRightM{display: none;}
+    }
+}
+#footer{
+    padding: 70px 0 0;
+    .footerArea{
+        background: #000;
+        .infoBox{
+            max-width: 1520px;
+            padding: 90px 80px;
+            font-size: 16px;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            .info{
+                color: #b0b0b0;
+                >a{
+                    color: #b0b0b0;
+                    &:hover{
+                        color: #DBFF08;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//media screen 영역
+@media screen and (max-width:1520px){
+    #header{#nav{.navWrap{min-width: 0;}}}
+    #footer{.textFlow{.footerArea{.infoBox{max-width: 0px;}}}}
+}
+@media screen and (max-width:1200px){
+    #header{
+        #nav{.navWrap{padding: 0 60px;}}
+    }
+}
+@media screen and (max-width:1020px){
+    #header{
+        position: relative;
+        #nav{
+            height: 70px;
+            .navWrap{
+                padding: 0 40px;
+                .navRight{display: none;}
+                .bar{
+                    display: flex;
+                    flex-direction: column;
+                    >span{
+                        display: inline-block;
+                        width: 22px;
+                        height: 2px;
+                        background: #000;
+                        &:not(:last-child){margin-bottom: 7px;}
+                    }
+                }
+            }
+            .navRightM{
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: #5292ff;
+                width: 80%;
+                height: 100vh;
+                transform: translateX(100%);
+                transition: .6s;
+                border-left: 1px solid #000;
+                .close{
+                    margin: 30px 40px;
+                    position: absolute;
+                    right: 10px;
+                }
+                .burger{
+                    margin-top: 75px;
+                    >li{
+                        &:not(:last-child){border-bottom: 1px solid #000;}
+                        a{
+                            display: inline-block;
+                            padding: 50px;
+                            width: 100%;
+                            font-size: 24px;
+                            &:hover{
+                                color: #DBFF08;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #footer{
+        .footerArea{
+            .infoBox{
+                gap: 20px;
+                flex-direction: column;
+                padding: 70px 40px;
+            }
+        }
+    }
+}
+@media screen and (max-width:740px){
+    #footer{
+        padding: 40px 0 0;
+        .footerArea{
+            .infoBox{
+                font-size: 14px;
+                gap: 20px;
+            }
+        }
+    }
+}

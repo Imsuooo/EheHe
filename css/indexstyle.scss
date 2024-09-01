@@ -1,0 +1,315 @@
+@charset 'UTF-8';
+
+@mixin btn{
+    width: 66px;
+        height: 66px;
+        border-radius: 100%;
+        border: 1px solid #000;
+        transition: .3s;
+        &:hover{
+            background: #DBFF08;
+            >a>img{transform: translate(-45%, -60%);}
+        }
+        >a{
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: relative;
+            >img{
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-55%, -50%);
+                transition: .3s;
+            }
+        }
+}
+.moreBtn{@include btn();}
+
+#main{
+    .container{padding: 0 80px;}
+   .brandStory{
+    margin: 130px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    .ehehebanner{
+        display: block;
+        width: 100%;
+    }
+    .ehehebannerM{
+        display: none;
+    }
+    .brandtext{
+        margin-top: 35px;
+        text-align: center;
+        line-height: 2;
+        font-size: 20px;
+    }
+   
+   }
+   .textFlow{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    margin: 100px 0 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    .textArea{
+        .textFlowtext{
+            font-size: 60px;
+            font-weight: 100;
+        }
+    }
+}
+.visualArea{
+    width: 100%;
+    height: 900px;
+    position: relative;
+    overflow: hidden;
+    .visuals{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: 1s;
+        .visual{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            text-align: center;
+            flex-shrink: 0;
+            &:first-child{left: 0;}
+           >a{
+            height: 100%;
+            >img{
+                height: 100%;
+                object-fit: cover;
+               &.visualImgLarge{display: block;}
+               &.visualImgSmall{display: none;}
+            }
+           }
+        }
+    }
+}
+.controlBox{
+    width: 100%;
+    height: 70px;
+    border: 1px solid #000;
+    background: #fff;
+    .controlArea{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .controlArrowBox{
+            width: 300px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            .controlArrow{
+                width: 100%;
+                height: 24px;
+                transition: 0.6s;
+                cursor: pointer;
+            }
+            .controlLeft{
+                position: relative;
+                left: 0;
+                &:hover{left: -10px;}
+            }   
+            .controlRight{
+                position: relative;
+                right: 0;
+                &:hover{right: -10px;}
+            }   
+        }
+        .controlArrowLeft{ border-right: 1px solid #000;}
+        .controlArrowRight{ border-left: 1px solid #000;}
+    }
+}
+   .project{
+    height: 100%;
+    margin-top: 120PX;
+    .projectTitle{
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+    .projects{
+        width: 100%;
+        height: inherit;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        .projectBox{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2%;
+            margin-bottom: 20px;
+            .item{
+                display: inline-block;
+                width: 32%;
+                .projectImg{
+                    width: 100%;
+                    overflow: hidden;
+                    .nail{
+                        width: 100%;
+                        .projectImgItem{
+                            width: 100%;
+                            display: block;
+                            object-fit: cover;
+                            transition: transform .4s;
+                        }
+                    }
+                    &:hover .projectImgItem{
+                        transform: scale(1.1);
+                    }
+                }
+                .productTitle{
+                    font-size: 20px;
+                    font-weight: 200;
+                    padding: 13px;
+                }
+            }
+        }
+    }
+    .projectBtn{
+       margin: 30px auto 0;
+    }
+   }
+}
+@keyframes scroll-animation{
+    0%{
+      left: 0;
+    }
+    100%{
+      left: -300px; /* 텍스트 width와 동일 */
+    }
+  }
+
+//media screen 영역
+@media screen and (max-width:1200px){
+    #main{
+        .container{padding: 0 60px;}
+        .controlBox .controlArea .controlArrowBox{width: 235px;}
+    }
+}
+@media screen and (max-width:1020px){
+    #main{
+        .container{padding: 0 40px;}
+        .controlBox .controlArea .controlArrowBox{width: 200px;}
+    }
+}
+@media screen and (max-width:900px){
+    #main{
+        .brandStory{
+            margin: 60px 0 100px;
+            .ehehebanner{
+                display: none;
+            }
+            .ehehebannerM{
+                display: block;
+                width: 100%;
+            }
+            .brandtext{
+                margin-top: 20px;
+            }
+
+        }
+        .visualArea{
+            .visuals{
+                .visual{
+                    >a{
+                        >img{
+                           &.visualImgLarge{display: none;}
+                           &.visualImgSmall{display: block;}
+                        }
+                    }
+                }
+            }
+        }
+        .project{
+            height: 100%;
+            margin-top: 120PX;
+            .projectTitle{
+                font-size: 50px;
+                margin-bottom: 20px;
+            }
+            .projects{
+                .projectBox{
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 0px;
+                    .item{
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:740px){
+    #main{
+        .controlBox .controlArea .controlArrowBox{width: 100px;}
+        .project{
+            margin-top: 100PX;
+            .projectTitle{
+                font-size: 45px;
+            }
+        }
+    }
+}
+@media screen and (max-width:600px){
+    #main{
+        .brandStory{
+            margin: 80px 0;
+            .brandtext{
+                font-size: 18px;
+                text-align: left;
+            }
+        }
+        .textFlow{
+            .textArea .textFlowtext{ font-size: 45px;}
+        }
+        .project{
+            height: 100%;
+            margin-top: 80PX;
+            .projectTitle{
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+            .projects{
+                .projectBox{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    &:not(:last-child) {
+                        border-bottom: 1px solid #000;
+                     }
+                    .item{
+                        display: inline-block;
+                        &:nth-last-child(even){
+                        border-right: 0px solid #000;
+                        border-bottom: 1px solid #000;
+                        }
+                        .productTitle{
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+            .projectBtn{
+                margin: 50px auto 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+#header #nav .navWrap .navRight .now {
+  color: #5292FF;
+}
+#header #nav .navRightM .burger .now {
+  background: #fff;
+}
+
+#main {
+  margin-top: 150px;
+  padding: 0 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#main .projectTitle {
+  width: 100%;
+  font-size: 40px;
+  padding-bottom: 30px;
+  text-align: center;
+  border-bottom: 1px solid #000;
+}
+#main .detail {
+  margin-top: 50px;
+  max-width: 900px;
+}
+#main .detail > img {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 740px) {
+  #main {
+    padding: 0 40px;
+  }
+  #main .projectTitle {
+    font-size: 36px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #main .projectTitle {
+    font-size: 32px;
+  }
+}/*# sourceMappingURL=detailpage.css.map */

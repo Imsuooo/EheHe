@@ -1,0 +1,191 @@
+.navList {
+  display: block;
+  padding: 10px 0;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+.navList::before {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: url(../img/navPoint.png) no-repeat center center/contain;
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+}
+.navList:hover::before {
+  top: 1px;
+  opacity: 1;
+}
+
+body.menuActive {
+  overflow: hidden;
+  height: 100%;
+}
+
+#header {
+  width: 100%;
+}
+#header #nav {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #000;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+#header #nav .navWrap {
+  min-width: 1520px;
+  height: 100%;
+  position: relative;
+  padding: 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header #nav .navWrap .logo > a {
+  width: 68px;
+}
+#header #nav .navWrap .navRight {
+  display: flex;
+}
+#header #nav .navWrap .navRight > li:not(:last-child) {
+  padding-right: 50px;
+}
+#header #nav .navWrap .navRight > li > a {
+  display: block;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 8px;
+  transition: 0.3s;
+}
+#header #nav .navWrap .navRight > li > a:hover {
+  color: #5292FF;
+}
+#header #nav .navWrap .bar {
+  display: none;
+}
+#header #nav .navRightM {
+  display: none;
+}
+
+#footer {
+  padding: 70px 0 0;
+}
+#footer .footerArea {
+  background: #000;
+}
+#footer .footerArea .infoBox {
+  max-width: 1520px;
+  padding: 90px 80px;
+  font-size: 16px;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+#footer .footerArea .infoBox .info {
+  color: #b0b0b0;
+}
+#footer .footerArea .infoBox .info > a {
+  color: #b0b0b0;
+}
+#footer .footerArea .infoBox .info > a:hover {
+  color: #DBFF08;
+}
+
+@media screen and (max-width: 1520px) {
+  #header #nav .navWrap {
+    min-width: 0;
+  }
+  #footer .textFlow .footerArea .infoBox {
+    max-width: 0px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #header #nav .navWrap {
+    padding: 0 60px;
+  }
+}
+@media screen and (max-width: 1020px) {
+  #header {
+    position: relative;
+  }
+  #header #nav {
+    height: 70px;
+  }
+  #header #nav .navWrap {
+    padding: 0 40px;
+  }
+  #header #nav .navWrap .navRight {
+    display: none;
+  }
+  #header #nav .navWrap .bar {
+    display: flex;
+    flex-direction: column;
+  }
+  #header #nav .navWrap .bar > span {
+    display: inline-block;
+    width: 22px;
+    height: 2px;
+    background: #000;
+  }
+  #header #nav .navWrap .bar > span:not(:last-child) {
+    margin-bottom: 7px;
+  }
+  #header #nav .navRightM {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #5292ff;
+    width: 80%;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: 0.6s;
+    border-left: 1px solid #000;
+  }
+  #header #nav .navRightM .close {
+    margin: 30px 40px;
+    position: absolute;
+    right: 10px;
+  }
+  #header #nav .navRightM .burger {
+    margin-top: 75px;
+  }
+  #header #nav .navRightM .burger > li:not(:last-child) {
+    border-bottom: 1px solid #000;
+  }
+  #header #nav .navRightM .burger > li a {
+    display: inline-block;
+    padding: 50px;
+    width: 100%;
+    font-size: 24px;
+  }
+  #header #nav .navRightM .burger > li a:hover {
+    color: #DBFF08;
+    font-weight: 500;
+  }
+  #footer .footerArea .infoBox {
+    gap: 20px;
+    flex-direction: column;
+    padding: 70px 40px;
+  }
+}
+@media screen and (max-width: 740px) {
+  #footer {
+    padding: 40px 0 0;
+  }
+  #footer .footerArea .infoBox {
+    font-size: 14px;
+    gap: 20px;
+  }
+}/*# sourceMappingURL=allstyle.css.map */
