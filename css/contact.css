@@ -57,7 +57,7 @@
     padding: 60px;
   }
   #main .contacts {
-    width: 80%;
+    width: 90%;
     margin-left: 0px;
     position: absolute;
     top: 50%;
@@ -78,5 +78,17 @@
   }
   #main .contacts > ul > li {
     padding: 5px 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  #main .contacts {
+    padding: 40px 30px;
+  }
+  #main .contacts .contactName {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+  #main .contacts > ul {
+    font-size: 18px;
   }
 }/*# sourceMappingURL=contact.css.map */
