@@ -261,6 +261,12 @@
     width: 100%;
     margin-bottom: 20px;
   }
+  #main .project .projects .projectBox .item .productTitle {
+    font-size: 20px;
+    font-weight: 200;
+    padding: 0px;
+    text-align: center;
+  }
 }
 @media screen and (max-width: 740px) {
   #main .controlBox .controlArea .controlArrowBox {
@@ -279,7 +285,7 @@
   }
   #main .brandStory .brandtext {
     font-size: 18px;
-    text-align: left;
+    padding: 0 40px;
   }
   #main .textFlow .textArea .textFlowtext {
     font-size: 45px;
@@ -297,15 +303,8 @@
     display: flex;
     flex-direction: column;
   }
-  #main .project .projects .projectBox:not(:last-child) {
-    border-bottom: 1px solid #000;
-  }
   #main .project .projects .projectBox .item {
     display: inline-block;
-  }
-  #main .project .projects .projectBox .item:nth-last-child(even) {
-    border-right: 0px solid #000;
-    border-bottom: 1px solid #000;
   }
   #main .project .projects .projectBox .item .productTitle {
     font-size: 18px;

@@ -1,0 +1,88 @@
+@charset 'UTF-8';
+#main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+        .imgarea{
+            width: 50%;
+            height: 100%;
+            background-color: #5292FF;
+            display: flex;
+            justify-content: center;
+            padding-top: 40px;
+            >img{
+                display: block;
+                padding: 60px;
+            }
+        }
+        .contacts{
+            width: 50%;
+            margin-left: 70px;
+            .contactName{
+                font-size: 60px;
+                margin-bottom: 50px;
+            }
+            >ul{
+                font-size: 24px;
+              >li{
+                padding: 10px 0;
+              }
+            }
+        }
+}
+#footer{
+    padding: 0;
+}
+
+
+//media screen 영역
+@media screen and (max-width:900px){
+    #main{
+            .imgarea{
+                    >img{
+                    padding: 160px;
+                }
+            }
+            .contacts{
+                width: 50%;
+                margin-left: 40px;
+            }
+    }
+}
+
+@media screen and (max-width:750px){
+    #main{
+        flex-wrap: wrap;
+        position: relative;
+            .imgarea{
+                width: 100%;
+                >img{
+                    display: block;
+                    padding: 60px;
+                }
+            }
+            .contacts{
+                width: 80%;
+                margin-left: 0px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 70px 40px;
+                background: #ffffff76;
+                border-radius: 5px;
+                backdrop-filter: blur(5px);
+                .contactName{
+                    font-size: 50px;
+                    margin-bottom: 20px;
+                }
+                >ul{
+                    font-size: 20px;
+                  >li{
+                    padding: 5px 0;
+                  }
+                }
+            }
+    }
+}

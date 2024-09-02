@@ -241,6 +241,7 @@
             .projectTitle{
                 font-size: 50px;
                 margin-bottom: 20px;
+                
             }
             .projects{
                 .projectBox{
@@ -251,6 +252,12 @@
                     .item{
                         width: 100%;
                         margin-bottom: 20px;
+                        .productTitle{
+                            font-size: 20px;
+                            font-weight: 200;
+                            padding: 0px;
+                            text-align: center;
+                        }
                     }
                 }
             }
@@ -274,7 +281,7 @@
             margin: 80px 0;
             .brandtext{
                 font-size: 18px;
-                text-align: left;
+                padding: 0 40px;
             }
         }
         .textFlow{
@@ -292,15 +299,8 @@
                     width: 100%;
                     display: flex;
                     flex-direction: column;
-                    &:not(:last-child) {
-                        border-bottom: 1px solid #000;
-                     }
                     .item{
                         display: inline-block;
-                        &:nth-last-child(even){
-                        border-right: 0px solid #000;
-                        border-bottom: 1px solid #000;
-                        }
                         .productTitle{
                             font-size: 18px;
                         }

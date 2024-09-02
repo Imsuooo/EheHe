@@ -42,16 +42,19 @@
 //media screen 영역
     @media screen and (max-width:740px){
         #main{
-            padding: 0 40px;
+            padding: 0px;
             .projectTitle{
-                font-size: 36px;
+                font-size: 28px;
+                padding-bottom: 20px;
+                margin: 0 15px;
             }
         }
     }
     @media screen and (max-width:500px){
         #main{
             .projectTitle{
-                font-size: 32px;
+                font-size: 24px;
+                padding-bottom: 10px;
             }
         }
     }

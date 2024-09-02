@@ -58,7 +58,7 @@
                 .productTitle{
                     font-size: 18px;
                     margin: 10px;
-                    font-weight: 300;
+                    font-weight: 200;
                     -webkit-line-clamp:1;
                     text-overflow: ellipsis;
                     overflow: hidden;
@@ -83,8 +83,9 @@
             .item{
                 width: 48%;
                 .productTitle{
-                    font-size: 20px;
+                    font-size: 18px;
                     margin: 15px 20px;
+                    text-align: center;
                 }
             }
         }
